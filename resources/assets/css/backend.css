@@ -1,0 +1,50 @@
+hr {
+    border-top: 1px solid #30415d;
+}
+
+.navbar-inverse {
+	background-color: #30415d;
+}
+
+.btn-e-kako {
+    color: #f5f8fa;
+    background-color: #cf6766;
+    border: 3px solid #cf6766;
+}
+
+.btn-e-kako:hover,
+.btn-e-kako:active,
+.btn-e-kako:focus {
+	color: #cf6766;
+    background-color: #f5f8fa;
+    border: 3px solid #cf6766;
+}
+
+.btn-default:active:hover {
+	color: #cf6766;
+    background-color: #f5f8fa;
+    border: 3px solid #cf6766;
+}
+
+.mobile-menu.navbar-inverse .navbar-nav > li > a {
+	color: #8eaebd;
+}
+
+@media (min-width: 767px) {
+    nav.mobile-menu {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+	.mobile-menu.navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+	    color: #8eaebd;
+	}
+
+	.mobile-menu.navbar-inverse .navbar-nav > .active > a, 
+	.mobile-menu.navbar-inverse .navbar-nav > .active > a:hover, 
+	.mobile-menu.navbar-inverse .navbar-nav > .active > a:focus {
+	    color: #fff;
+	    background-color: #cf6766;
+	}
+}
