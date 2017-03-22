@@ -46,11 +46,16 @@
                             Kontr. ploča
                         </a>
                     </li>
-                    <li {{Request::is('categories') ? 'class=active': '' }}>
-                    <a href="{{route('categories.index')}}">
-                        Kategorije
-                    </a>
-                </li>
+                    <li {{Request::is('categories') || Request::is('categories/*') ? 'class=active': '' }}>
+                        <a href="{{route('categories.index')}}">
+                            Kategorije
+                        </a>
+                    </li>
+                    <li {{Request::is('images') || Request::is('images/*') ? 'class=active': '' }}>
+                        <a href="{{route('images.index')}}">
+                            Slike
+                        </a>
+                    </li>
                 </ul>
     
                 </div><!-- /.navbar-collapse -->
@@ -86,10 +91,16 @@
                         <p>Kontr. ploča</p>
                     </a>
                 </li>
-                <li {{Request::is('categories') ? 'class=active': '' }}>
+                <li {{Request::is('categories') || Request::is('categories/*') ? 'class=active': '' }}>
                     <a href="{{route('categories.index')}}">
                         <i class="fa fa-tags" aria-hidden="true"></i>
                         <p>Kategorije</p>
+                    </a>
+                </li>
+                <li {{Request::is('images') || Request::is('images/*') ? 'class=active': '' }}>
+                    <a href="{{route('images.index')}}">
+                        <i class="fa fa-picture-o" aria-hidden="true"></i>
+                        <p>Slike</p>
                     </a>
                 </li>
             </ul>
@@ -104,8 +115,10 @@
                     <a class="navbar-brand" href="javascript:void(0)" style="color: #8eaebd;">
                     @if(Request::is('home'))
                         Kontrolna ploča
-                    @elseif(Request::is('categories'))
+                    @elseif(Request::is('categories') || Request::is('categories/*'))
                         Kategorije
+                    @elseif(Request::is('images') || Request::is('images/*'))
+                        Slike
                     @endif
                     </a>
                 </div>

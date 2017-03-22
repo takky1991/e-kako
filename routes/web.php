@@ -19,3 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'Backend\HomeController@index')->name('backend.home');
 Route::resource('categories', 'Backend\CategoriesController');
+Route::resource('images', 'Backend\ImagesController');
+Route::post('/images-upload','Backend\ImagesController@upload')->name('images-upload');

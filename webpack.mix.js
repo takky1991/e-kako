@@ -15,6 +15,12 @@ mix.copy('resources/assets/fonts', 'public/build/fonts');
 mix.js('resources/assets/js/app.js', 'public/build/js')
    .sass('resources/assets/sass/app.scss', 'public/build/css');
 
+mix.js('node_modules/sweetalert/dist/sweetalert-dev.js', 'public/build/js/resources.js')
+   .styles('node_modules/sweetalert/dist/sweetalert.css', 'public/build/css/resources.css');
+
+mix.js('node_modules/dropzone/dist/dropzone.js', 'public/build/js/dropzone.js')
+   .styles('node_modules/dropzone/dist/dropzone.css', 'public/build/css/dropzone.css');
+
 mix.js('resources/assets/js/backend.js', 'public/build/js/backend.js');
 
 mix.styles([

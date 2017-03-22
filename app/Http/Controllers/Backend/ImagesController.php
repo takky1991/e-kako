@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Category;
 use Illuminate\Http\Request;
+use App\Http\Requests\ImageUpload;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\NewCategoryForm;
 
-class CategoriesController extends Controller
+class ImagesController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -26,9 +25,12 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        return view('backend/image/index');
+    }
 
-        return view('backend/category/index', ['categories' => $categories]);
+    public function upload(ImageUpload $request)
+    {
+        $request->file('file')->store('uploads');
     }
 
     /**
@@ -38,7 +40,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('backend/category/create');
+        //
     }
 
     /**
@@ -47,16 +49,9 @@ class CategoriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(NewCategoryForm $request)
+    public function store(Request $request)
     {
-        $category = Category::create([
-            'name' => $request->name,
-            'slug' => str_slug($request->name, '-'),
-            'description' => $request->description
-        ]);
-
-        flashSuccess('Uspjesno ste kreirali kategoriju ' . $category->name . '.');
-        return redirect(route('categories.index'));
+        //
     }
 
     /**
@@ -76,9 +71,9 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit($id)
     {
-        return view('backend/category/edit', ['category' => $category]);
+        //
     }
 
     /**
@@ -88,16 +83,9 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(NewCategoryForm $request, Category $category)
+    public function update(Request $request, $id)
     {
-        $category->update([
-            'name' => $request->name,
-            'slug' => str_slug($request->name, '-'),
-            'description' => $request->description
-        ]);
-
-        flashSuccess('Uspjesno ste izmjenili kategoriju ' . $category->name . '.');
-        return redirect(route('categories.index'));
+        //
     }
 
     /**
@@ -106,11 +94,8 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
-    {   
-        $name = $category->name;
-        $category->delete();
-        flashSuccess('Uspjesno ste obrisali kategoriju ' . $name . '.');
-        return redirect(route('categories.index'));
+    public function destroy($id)
+    {
+        //
     }
 }

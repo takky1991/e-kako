@@ -4,6 +4,7 @@
 /public/build/*
 /storage/*.key
 /storage/logs
+/storage/app/uploads/*
 /vendor
 /.idea
 Homestead.json

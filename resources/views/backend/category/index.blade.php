@@ -8,18 +8,11 @@
 
     <hr>
 
-    <!-- will be used to show any messages -->
-    @if (Session::has('success'))
-        <div class="alert alert-success">{{ Session::get('success') }}</div>
-    @endif
-    @if (Session::has('error'))
-        <div class="alert alert-danger">{{ Session::get('error') }}</div>
-    @endif
-
     <div class="table-responsive">
         <table class="table">
             <thead>
                 <tr class="info">
+                    <th>#</th>
                     <th>Ime</th>
                     <th>Opis</th>
                     <th class="center">Opcije</th>
@@ -28,9 +21,10 @@
             <tbody>
             @foreach($categories as $key => $value)
                 <tr>
+                    <td>{{$loop->iteration}}</td>
                     <td>{{ $value->name }}</td>
                     <td>{{ $value->description }}</td>
-                    <td style="text-align:center;">
+                    <td>
                         <a href="{{ URL::to('categories/' . $value->id . '/edit') }}">
                             <i class="fa fa-pencil edit-icon" aria-hidden="true"></i>
                         </a>

@@ -12,9 +12,12 @@
 
     <!-- Styles -->
     <link href="{{ mix('build/css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('build/css/resources.css') }}" rel="stylesheet">
     @stack('styles')
 
     <!-- Scripts -->
+    <script src="{{ mix('build/js/resources.js') }}"></script>
+
     <script>
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
@@ -24,6 +27,7 @@
 <body>
     <div id="app">
         @yield('content')
+        @include('flash')
     </div>
 
     <!-- Scripts -->
