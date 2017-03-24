@@ -9,7 +9,14 @@ class Post extends Model
     protected $fillable = [
 		'user_id',
 		'category_id',
+		'promo_image_id',
 		'title',
-		'content'
+		'content',
+		'public'
 	];
+
+	public function category()
+	{
+		return $this->belongsTo('App\Category');
+	}
 }

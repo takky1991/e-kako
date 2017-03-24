@@ -45,6 +45,7 @@ $factory->define(App\Post::class, function (Faker\Generator $faker) {
         'user_id' => 1,
         'category_id' => $faker->randomElement($categories = Category::all()->pluck('id')->toArray()),
         'title' => $faker->sentence($nbWords = 6, $variableNbWords = true),
-        'content' => $faker->paragraph($nbSentences = 10, $variableNbSentences = true)
+        'content' => $faker->paragraph($nbSentences = 10, $variableNbSentences = true),
+        'public' => false
     ];
 });

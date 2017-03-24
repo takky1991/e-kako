@@ -108,9 +108,14 @@ class CategoriesController extends Controller
      */
     public function destroy(Category $category)
     {   
+        if(!$category->posts->isEmpty()) {
+            flashError('Nije moguće obrisati kategoriju jer postoje postovi te kategorije.');
+            return back();
+        }
+
         $name = $category->name;
         $category->delete();
         flashSuccess('Uspjesno ste obrisali kategoriju ' . $name . '.');
-        return redirect(route('categories.index'));
+        return back();
     }
 }

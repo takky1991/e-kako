@@ -46,6 +46,11 @@
                             Kontr. ploča
                         </a>
                     </li>
+                    <li {{Request::is('posts') || Request::is('posts/*') ? 'class=active': '' }}>
+                        <a href="{{route('posts.index')}}">
+                            Postovi
+                        </a>
+                    </li>
                     <li {{Request::is('categories') || Request::is('categories/*') ? 'class=active': '' }}>
                         <a href="{{route('categories.index')}}">
                             Kategorije
@@ -91,6 +96,12 @@
                         <p>Kontr. ploča</p>
                     </a>
                 </li>
+                <li {{Request::is('posts') || Request::is('posts/*') ? 'class=active': '' }}>
+                    <a href="{{route('posts.index')}}">
+                        <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                        <p>Postovi</p>
+                    </a>
+                </li>
                 <li {{Request::is('categories') || Request::is('categories/*') ? 'class=active': '' }}>
                     <a href="{{route('categories.index')}}">
                         <i class="fa fa-tags" aria-hidden="true"></i>
@@ -119,6 +130,8 @@
                         Kategorije
                     @elseif(Request::is('images') || Request::is('images/*'))
                         Slike
+                    @elseif(Request::is('posts') || Request::is('posts/*'))
+                        Postovi
                     @endif
                     </a>
                 </div>

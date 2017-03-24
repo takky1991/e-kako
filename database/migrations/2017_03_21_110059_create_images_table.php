@@ -17,9 +17,14 @@ class CreateImagesTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name');
+            $table->string('real_name');
+            $table->string('thumbnail_name');
             $table->string('uri');
+            $table->string('thumbnail_uri');
+            $table->string('alt')->nullable();
             $table->string('format');
             $table->integer('size');
+            $table->string('mime_type');
             $table->timestamps();
             $table->softDeletes();
         });

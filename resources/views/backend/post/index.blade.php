@@ -2,8 +2,8 @@
 
 @section('container')
     
-    <a href="{{route('categories.create')}}" class="btn btn-default btn-e-kako">
-        <i class="fa fa-tag" aria-hidden="true"></i></i> Nova kategorija
+    <a href="{{route('posts.create')}}" class="btn btn-default btn-e-kako">
+        <i class="fa fa-file-text-o" aria-hidden="true"></i> Novi post
     </a>
 
     <hr>
@@ -13,26 +13,26 @@
             <thead>
                 <tr class="info">
                     <th>#</th>
-                    <th>Ime</th>
-                    <th>Opis</th>
+                    <th>Naslov</th>
+                    <th>Kategorija</th>
                     <th class="center">Opcije</th>
                 </tr>
             </thead>
             <tbody>
-            @foreach($categories as $key => $value)
+            @foreach($posts as $key => $value)
                 <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{ $value->name }}</td>
-                    <td>{{ $value->description }}</td>
+                    <td>{{ $value->title }}</td>
+                    <td>{{ $value->category->name }}</td>
                     <td>
-                        <a href="{{ URL::to('categories/' . $value->id . '/edit') }}">
+                        <a href="{{ URL::to('posts/' . $value->id . '/edit') }}">
                             <i class="fa fa-pencil edit-icon" aria-hidden="true"></i>
                         </a>
-                        <a href="{{ URL::to('categories/' . $value->id) }}"
+                        <a href="{{ URL::to('posts/' . $value->id) }}"
                                 onclick="{{'confirmDelete' . $value->id . '()'}}">
                             <i class="fa fa-trash delete-icon" aria-hidden="true"></i>
                         </a>
-    					<form id="delete-{{$value->id}}" action="{{ URL::to('categories/' . $value->id ) }}" method="POST" style="display: none;">
+    					<form id="delete-{{$value->id}}" action="{{ URL::to('posts/' . $value->id ) }}" method="POST" style="display: none;">
     						{{ csrf_field() }}
                             <input type="hidden" name="_method" value="DELETE">
     					</form>
@@ -43,7 +43,7 @@
                         event.preventDefault();
                         swal({
                             title: "Pažnja",
-                            text: "Da li zaista želite obrisati kategoriju {{$value->name}}?",
+                            text: "Da li zaista želite obrisati post {{$value->title}}?",
                             type: "warning",
                             showCancelButton: true,
                             confirmButtonColor: "#cf6766",
@@ -63,4 +63,5 @@
             </tbody>
         </table>
     </div>
+    {{ $posts->links() }}
 @endsection

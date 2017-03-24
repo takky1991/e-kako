@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\UploadedImage;
 use Illuminate\Http\Request;
 use App\Http\Requests\ImageUpload;
 use App\Http\Controllers\Controller;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 
 class ImagesController extends Controller
 {
@@ -25,12 +28,37 @@ class ImagesController extends Controller
      */
     public function index()
     {
-        return view('backend/image/index');
+        $images = UploadedImage::paginate(100);
+
+        return view('backend/image/index', ['images' => $images]);
     }
 
     public function upload(ImageUpload $request)
-    {
-        $request->file('file')->store('uploads');
+    {   
+        $file = $request->file('file');
+
+        $realName = $file->hashName();
+        $thumbnailName = 'tn-' . $realName;
+        $format = $file->guessClientExtension();
+        $size = $file->getClientSize();
+        $mimeType = $file->getMimeType();
+        $uri = $file->store('public/uploads');
+        $thumbnailUri = 'public/thumbnails/' . $thumbnailName;
+
+        Image::make(storage_path('app/' . $uri))->fit(200)->save(storage_path('app/' . $thumbnailUri));
+
+        UploadedImage::create([
+            'name' => '',
+            'real_name' => $realName,
+            'thumbnail_name' => $thumbnailName,
+            'uri' => $uri,
+            'thumbnail_uri' => $thumbnailUri,
+            'alt' => '',
+            'format' => $format,
+            'size' => $size,
+            'mime_type' => $mimeType
+        ]);
+
     }
 
     /**
@@ -94,8 +122,12 @@ class ImagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(UploadedImage $image)
     {
-        //
+        Storage::disk('local')->delete($image->uri);
+        Storage::disk('local')->delete($image->thumbnail_uri);
+        $image->delete();
+        flashSuccess('Uspjesno ste uklonili sliku.');
+        return back();
     }
 }

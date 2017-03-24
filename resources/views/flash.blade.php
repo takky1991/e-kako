@@ -14,7 +14,7 @@
     		type: "error",
     		title: "ERROR",
 			text: "{{ Session::get('error') }}",
-			timer: 2000
+			timer: 5000
 		})
     </script>
 @endif

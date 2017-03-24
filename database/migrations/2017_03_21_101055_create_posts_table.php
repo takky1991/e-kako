@@ -18,8 +18,10 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('category_id');
+            $table->unsignedInteger('promo_image_id')->nullable();
             $table->string('title');
             $table->text('content');
+            $table->boolean('public');
             $table->timestamps();
             $table->softDeletes();
         });

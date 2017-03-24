@@ -46,6 +46,23 @@ a:hover, a:focus {
     padding: 0 10px;
 }
 
+.img-wrapper {
+	position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.img-wrapper img{
+	border-radius: 5px;
+	border: 1px solid #30415d;
+}
+
+.img-delete-icon {
+	position: absolute;
+	color: #cf6766;
+    background-color: transparent;
+    border: 3px solid transparent;
+}
 
 @media (min-width: 767px) {
     nav.mobile-menu {
