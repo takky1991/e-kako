@@ -18,7 +18,7 @@
         @foreach($set as $image)
         <div class="col-xs-6 col-md-1">
             <div class="img-wrapper">
-                <form method="POST" action="{{route('images.destroy', ['image' => $image])}}">
+                <form method="POST" action="{{route('pictures.destroy', ['image' => $image])}}">
                     {{csrf_field()}}
                     <input type="hidden" name="_method" value="DELETE">
                     <button type="submit" class="btn btn-default btn-e-kako img-delete-icon"><i class="fa fa-times" aria-hidden="true"></i></button>

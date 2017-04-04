@@ -8,6 +8,7 @@ use App\Http\Requests\ImageUpload;
 use App\Http\Controllers\Controller;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Response;
 
 class ImagesController extends Controller
 {
@@ -122,12 +123,29 @@ class ImagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(UploadedImage $image)
+    public function destroy(UploadedImage $picture)
     {
-        Storage::disk('local')->delete($image->uri);
-        Storage::disk('local')->delete($image->thumbnail_uri);
-        $image->delete();
+        Storage::disk('local')->delete($picture->uri);
+        Storage::disk('local')->delete($picture->thumbnail_uri);
+        $picture->delete();
         flashSuccess('Uspjesno ste uklonili sliku.');
         return back();
+    }
+
+    public function imagesJson()
+    {
+        $images = UploadedImage::all();
+        $imageArray = array();
+
+        $images->each(function ($item, $key) use (&$imageArray) {
+            array_push($imageArray, [ 
+                "thumb" => Storage::disk('local')->url($item->thumbnail_uri),
+                "thumbtitle" => Storage::disk('local')->url($item->thumbnail_uri),
+                "image" => Storage::disk('local')->url($item->uri), 
+                "title" => $item->real_name, 
+                "id" => $item->id ]);
+        });
+
+        return Response::json($imageArray);
     }
 }

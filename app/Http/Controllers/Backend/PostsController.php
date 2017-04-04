@@ -3,11 +3,25 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Post;
+use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\PostFormRequest;
+use League\HTMLToMarkdown\HtmlConverter;
 
 class PostsController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +40,9 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('backend/post/create');
+        $categories = Category::all();
+
+        return view('backend/post/create', ['categories' => $categories]);
     }
 
     /**
@@ -35,9 +51,19 @@ class PostsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostFormRequest $request)
     {
-        //
+
+        Post::create([
+            'user_id' => Auth::id(),
+            'title' => $request->title,
+            'intro' => $request->intro,
+            'content' => $request->get('content'),
+            'category_id' => $request->category_id,
+            'public' => $request->public == 'on' ? true : false,
+        ]);
+
+        return redirect(route('posts.index'));
     }
 
     /**
@@ -57,9 +83,14 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        $categories = Category::all();
+
+        return view('backend/post/edit', [
+            'post' => $post,
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -69,9 +100,17 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PostFormRequest $request, Post $post)
     {
-        //
+        $post->update([
+            'title' => $request->title,
+            'intro' => $request->intro,
+            'content' => $request->get('content'),
+            'category_id' => $request->category_id,
+            'public' => $request->public == 'on' ? true : false,
+        ]);
+
+        return redirect(route('posts.index'));
     }
 
     /**

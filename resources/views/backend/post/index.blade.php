@@ -15,6 +15,7 @@
                     <th>#</th>
                     <th>Naslov</th>
                     <th>Kategorija</th>
+                    <th style="text-align: center;">Objavljeno</th>
                     <th class="center">Opcije</th>
                 </tr>
             </thead>
@@ -24,6 +25,17 @@
                     <td>{{$loop->iteration}}</td>
                     <td>{{ $value->title }}</td>
                     <td>{{ $value->category->name }}</td>
+                    <td>
+                        @if($value->public)
+                        <div class="published-icon-outer">
+                            <div class="public-icon-inner"></div>
+                        </div>
+                        @else
+                        <div class="published-icon-outer">
+                            <div class="not-public-icon-inner"></div>
+                        </div>
+                        @endif
+                    </td>
                     <td>
                         <a href="{{ URL::to('posts/' . $value->id . '/edit') }}">
                             <i class="fa fa-pencil edit-icon" aria-hidden="true"></i>

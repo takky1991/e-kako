@@ -11,6 +11,7 @@ class Post extends Model
 		'category_id',
 		'promo_image_id',
 		'title',
+		'intro',
 		'content',
 		'public'
 	];

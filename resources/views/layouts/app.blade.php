@@ -12,12 +12,10 @@
 
     <!-- Styles -->
     <link href="{{ mix('build/css/app.css') }}" rel="stylesheet">
-    <link href="{{ mix('build/css/resources.css') }}" rel="stylesheet">
     @stack('styles')
 
     <!-- Scripts -->
-    <script src="{{ mix('build/js/resources.js') }}"></script>
-
+    @stack('scripts_top')
     <script>
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
@@ -32,6 +30,6 @@
 
     <!-- Scripts -->
     <script src="{{ mix('build/js/app.js') }}"></script>
-    @stack('scripts')
+    @stack('scripts_bottom')
 </body>
 </html>

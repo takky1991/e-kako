@@ -6,14 +6,15 @@
 
 @section('container')
     
-    <h1>Novi post</h1>
+    <h1>{{$post->title}}</h1>
 
     <hr>
 
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <form role="form" action="{{route('posts.store')}}" method="POST">
+            <form role="form" action="{{route('posts.update', ['post' => $post])}}" method="POST">
                 {{csrf_field()}}
+                <input type="hidden" name="_method" value="PUT">
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="form-group {{$errors->has('title') ? 'has-error' : ''}}">
@@ -23,7 +24,7 @@
                                 id="title" 
                                 name="title" 
                                 placeholder="Ime" 
-                                value="{{old('title')}}">
+                                value="{{$post->title}}">
                             @if ($errors->has('title'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('title') }}</strong>
@@ -37,7 +38,7 @@
                             <textarea class="form-control" 
                                 id="intro" 
                                 name="intro" 
-                                placeholder="Kratki uvod">{{old('intro')}}</textarea> 
+                                placeholder="Kratki uvod">{{$post->intro}}</textarea> 
                             @if ($errors->has('intro'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('intro') }}</strong>
@@ -50,7 +51,7 @@
                             <label for="title">Kategorija</label>
                             <select class="form-control" id="category_id" name="category_id">
                             @foreach($categories as $category)
-                                <option value="{{ $category->id }}" {{old('category_id') == $category->id ? 'selected' : ''}}>
+                                <option value="{{ $category->id }}" {{$post->category_id == $category->id ? 'selected' : ''}}>
                                     {{ $category->name }}
                                 </option>
                             @endforeach
@@ -66,7 +67,7 @@
                         <div class="form-group"> 
                             <label for="public" style="width:100%">Objavi</label>
                             <label class="switch">
-                                <input type="checkbox" name="public">
+                                <input type="checkbox" name="public" {{$post->public ? 'checked' : '' }}>
                                 <div class="slider round"></div>
                             </label>
                         </div>
@@ -86,7 +87,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
-                        <button type="submit" class="btn btn-default btn-e-kako">Kreiraj</button>
+                        <button type="submit" class="btn btn-default btn-e-kako">Sačuvaj</button>
                     </div>
                 </div>
             </form>
@@ -115,8 +116,9 @@
                 imageResizable: true,
                 imagePosition: true,
                 lang : 'ba',
+                focusEnd : true
             });
-            redactorEditor.redactor("code.set", `{!!old('content')!!}`);
+            redactorEditor.redactor("code.set", `{!!$post->content!!}`);
         });
     </script>
 @endpush

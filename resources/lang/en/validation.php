@@ -116,7 +116,10 @@ return [
 
     'attributes' => [
         'name' => 'naziv',
-        'description' => 'opis'
+        'description' => 'opis',
+        'title' => 'naslov',
+        'content' => 'sadržaj',
+        'intro' => 'uvod'
     ],
 
 ];

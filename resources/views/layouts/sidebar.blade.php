@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+    @push('scripts_top')
+    <script src="{{ mix('build/js/resources.js') }}"></script>
+    @endpush
     @push('styles')
+    <link href="{{ mix('build/css/resources.css') }}" rel="stylesheet">
     <link href="{{ mix('build/css/backend.css') }}" rel="stylesheet">
     @endpush
     <div id="wrapper">
@@ -56,8 +60,8 @@
                             Kategorije
                         </a>
                     </li>
-                    <li {{Request::is('images') || Request::is('images/*') ? 'class=active': '' }}>
-                        <a href="{{route('images.index')}}">
+                    <li {{Request::is('pictures') || Request::is('pictures/*') ? 'class=active': '' }}>
+                        <a href="{{route('pictures.index')}}">
                             Slike
                         </a>
                     </li>
@@ -108,8 +112,8 @@
                         <p>Kategorije</p>
                     </a>
                 </li>
-                <li {{Request::is('images') || Request::is('images/*') ? 'class=active': '' }}>
-                    <a href="{{route('images.index')}}">
+                <li {{Request::is('pictures') || Request::is('pictures/*') ? 'class=active': '' }}>
+                    <a href="{{route('pictures.index')}}">
                         <i class="fa fa-picture-o" aria-hidden="true"></i>
                         <p>Slike</p>
                     </a>
@@ -128,7 +132,7 @@
                         Kontrolna ploča
                     @elseif(Request::is('categories') || Request::is('categories/*'))
                         Kategorije
-                    @elseif(Request::is('images') || Request::is('images/*'))
+                    @elseif(Request::is('pictures') || Request::is('pictures/*'))
                         Slike
                     @elseif(Request::is('posts') || Request::is('posts/*'))
                         Postovi

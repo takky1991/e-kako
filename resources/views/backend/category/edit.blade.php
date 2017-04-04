@@ -44,7 +44,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
-                        <button type="submit" class="btn btn-default btn-e-kako">Kreiraj</button>
+                        <button type="submit" class="btn btn-default btn-e-kako">Sačuvaj</button>
                     </div>
                 </div>
             </form>

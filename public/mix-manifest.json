@@ -4,7 +4,9 @@
   "/build/js/dropzone.js": "/build/js/dropzone.js",
   "/build/js/backend.js": "/build/js/backend.js",
   "/build/js/resources.js": "/build/js/resources.js",
+  "/build/css/frontend.css": "/build/css/frontend.css",
   "/build/css/resources.css": "/build/css/resources.css",
+  "/build/css/redactor.css": "/build/css/redactor.css",
   "/build/css/dropzone.css": "/build/css/dropzone.css",
   "/build/css/backend.css": "/build/css/backend.css"
 }

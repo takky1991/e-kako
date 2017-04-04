@@ -7,7 +7,8 @@ window._ = require('lodash');
  * code may be modified to fit the specific needs of your application.
  */
 
-window.$ = window.jQuery = require('jquery');
+//window.$ = window.jQuery = require('jquery');
+window.$ = window.jQuery = require('./jquery-2.2.4'); // redactor supports just jQuery version 2.x.x
 
 require('bootstrap-sass');
 

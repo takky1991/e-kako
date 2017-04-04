@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('promo_image_id')->nullable();
             $table->string('title');
+            $table->text('intro');
             $table->text('content');
             $table->boolean('public');
             $table->timestamps();
