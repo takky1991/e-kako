@@ -20,11 +20,13 @@ mix.copy('resources/assets/js/fullscreen.js', 'public/build/js');
 mix.copy('resources/assets/js/table.js', 'public/build/js');
 mix.copy('resources/assets/js/video.js', 'public/build/js');
 mix.copy('resources/assets/js/ba.js', 'public/build/js');
+mix.copy('resources/assets/js/image-picker.js', 'public/build/js');
 
 mix.js('resources/assets/js/app.js', 'public/build/js')
    .sass('resources/assets/sass/app.scss', 'public/build/css');
 
-mix.styles('resources/assets/css/frontend.css', 'public/build/css/frontend.css');
+mix.styles('resources/assets/css/frontend.css', 'public/build/css/frontend.css')
+	.js('resources/assets/js/frontend.js', 'public/build/js/frontend.js');
 
 mix.js('node_modules/sweetalert/dist/sweetalert-dev.js', 'public/build/js/resources.js')
    .styles('node_modules/sweetalert/dist/sweetalert.css', 'public/build/css/resources.css');
@@ -40,6 +42,7 @@ mix.styles([
     'resources/assets/css/sidebar.css',
     'resources/assets/css/font-awesome.css',
     'resources/assets/css/backend.css',
+    'resources/assets/css/image-picker.css',
 ], 'public/build/css/backend.css');
 
 if (mix.config.inProduction) {

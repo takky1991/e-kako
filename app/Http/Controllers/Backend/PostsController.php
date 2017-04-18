@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Post;
 use App\Category;
+use App\UploadedImage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -41,8 +42,12 @@ class PostsController extends Controller
     public function create()
     {
         $categories = Category::all();
+        $images = UploadedImage::all();
 
-        return view('backend/post/create', ['categories' => $categories]);
+        return view('backend/post/create', [
+            'categories' => $categories,
+            'images' => $images
+        ]);
     }
 
     /**
@@ -60,6 +65,7 @@ class PostsController extends Controller
             'intro' => $request->intro,
             'content' => $request->get('content'),
             'category_id' => $request->category_id,
+            'featured_image_id' => $request->featured_image_id,
             'public' => $request->public == 'on' ? true : false,
         ]);
 
@@ -86,10 +92,12 @@ class PostsController extends Controller
     public function edit(Post $post)
     {
         $categories = Category::all();
+        $images = UploadedImage::all();
 
         return view('backend/post/edit', [
             'post' => $post,
-            'categories' => $categories
+            'categories' => $categories,
+            'images' => $images
         ]);
     }
 
@@ -107,6 +115,7 @@ class PostsController extends Controller
             'intro' => $request->intro,
             'content' => $request->get('content'),
             'category_id' => $request->category_id,
+            'featured_image_id' => $request->featured_image_id,
             'public' => $request->public == 'on' ? true : false,
         ]);
 

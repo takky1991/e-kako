@@ -19,8 +19,10 @@ class CreateImagesTable extends Migration
             $table->string('name');
             $table->string('real_name');
             $table->string('thumbnail_name');
+            $table->string('featured_name');
             $table->string('uri');
             $table->string('thumbnail_uri');
+            $table->string('featured_uri');
             $table->string('alt')->nullable();
             $table->string('format');
             $table->integer('size');

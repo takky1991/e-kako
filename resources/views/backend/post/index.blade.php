@@ -37,14 +37,14 @@
                         @endif
                     </td>
                     <td>
-                        <a href="{{ URL::to('posts/' . $value->id . '/edit') }}">
+                        <a href="{{ route('posts.edit', ['post' => $value]) }}">
                             <i class="fa fa-pencil edit-icon" aria-hidden="true"></i>
                         </a>
-                        <a href="{{ URL::to('posts/' . $value->id) }}"
+                        <a href="{{ route('posts.destroy', ['post' => $value]) }}"
                                 onclick="{{'confirmDelete' . $value->id . '()'}}">
                             <i class="fa fa-trash delete-icon" aria-hidden="true"></i>
                         </a>
-    					<form id="delete-{{$value->id}}" action="{{ URL::to('posts/' . $value->id ) }}" method="POST" style="display: none;">
+    					<form id="delete-{{$value->id}}" action="{{ route('posts.destroy', ['post' => $value]) }}" method="POST" style="display: none;">
     						{{ csrf_field() }}
                             <input type="hidden" name="_method" value="DELETE">
     					</form>

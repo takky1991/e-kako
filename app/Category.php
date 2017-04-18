@@ -14,8 +14,35 @@ class Category extends Model
 		'description'
 	];
 
+	/**
+	 * Get the route key for the model.
+	 *
+	 * @return string
+	 */
+	public function getRouteKeyName()
+	{
+	    return 'slug';
+	}
+
 	public function posts()
 	{
 		return $this->hasMany('App\Post');
+	}
+
+	public function activePosts()
+	{
+		return $this->posts()->wherePublic(true)->get();
+	}
+
+	public function scopeWhereHasPosts($query)
+	{
+		return $query->whereHas('posts', function($query) {
+			$query->where('public', true);
+		});
+	}
+
+	public function latestSixActivePosts()
+	{
+		return $this->posts()->wherePublic(true)->latest()->limit(6)->get();
 	}
 }

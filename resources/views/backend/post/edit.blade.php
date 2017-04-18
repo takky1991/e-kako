@@ -12,7 +12,7 @@
 
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <form role="form" action="{{route('posts.update', ['post' => $post])}}" method="POST">
+            <form role="form" action="{{route('posts.update', ['post' => $post])}}" method="POST" style="margin-bottom: 100px;">
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="PUT">
                 <div class="row">
@@ -63,13 +63,47 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-xs-6">
+                    <div class="col-xs-3">
                         <div class="form-group"> 
                             <label for="public" style="width:100%">Objavi</label>
                             <label class="switch">
                                 <input type="checkbox" name="public" {{$post->public ? 'checked' : '' }}>
                                 <div class="slider round"></div>
                             </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="form-group {{$errors->has('featured_image_id') ? 'has-error' : ''}}"> 
+                        <!-- Trigger the modal with a button -->
+                            <label for="title">Promotivna slika</label>
+                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#featured_image_modal">Odaberi sliku</button>
+                        </div>
+
+                        <!-- Modal -->
+                        <div id="featured_image_modal" class="modal fade" role="dialog">
+                          <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Promotivna slika</h4>
+                              </div>
+                              <div class="modal-body">
+                                <select class="image-picker show-html" id="image-picker" name="featured_image_id">
+                                    @foreach($images as $image)
+                                        <option data-img-src="{{Storage::disk('local')->url($image->thumbnail_uri)}}" 
+                                            value="{{$image->id}}"
+                                            {{$post->featured_image_id == $image->id ? 'selected' : ''}} >  {{$image->real_name}} </option>
+                                    @endforeach
+                                </select>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Zatvori</button>
+                              </div>
+                            </div>
+
+                          </div>
                         </div>
                     </div>
                     <div class="col-xs-12">
@@ -103,8 +137,10 @@
     <script src="{{ asset('build/js/table.js') }}"></script>
     <script src="{{ asset('build/js/video.js') }}"></script>
     <script src="{{ asset('build/js/ba.js') }}"></script>
+    <script src="{{ asset('build/js/image-picker.js') }}"></script>
     <script type = "text/javascript" >
         $(document).ready(function() {
+            $("select#image-picker").imagepicker();
             var redactorEditor = $('#content');
             redactorEditor.redactor({
                 blurCallback: function(e) {

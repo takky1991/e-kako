@@ -20,8 +20,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="{{route('backend.home')}}" style="color: #8eaebd;">
-                    E-kako
-                  {{-- <img src="{{asset('images/logo_mini_transparent_white.png')}}" class="logo-mobile"> --}}
+                    <img src="{{asset('images/e-kako-logo-trans.png')}}" alt="e-kako" style="width: 100px;margin-top: -10px;">
                 </a>
                 </div>
 
@@ -45,22 +44,22 @@
                             </li>
                         </ul>
                     </li>
-                    <li {{Request::is('home') ? 'class=active': '' }}>
+                    <li {{Request::is('backend/home') ? 'class=active': '' }}>
                         <a href="{{route('backend.home')}}">
                             Kontr. ploča
                         </a>
                     </li>
-                    <li {{Request::is('posts') || Request::is('posts/*') ? 'class=active': '' }}>
+                    <li {{Request::is('backend/posts') || Request::is('backend/posts/*') ? 'class=active': '' }}>
                         <a href="{{route('posts.index')}}">
                             Postovi
                         </a>
                     </li>
-                    <li {{Request::is('categories') || Request::is('categories/*') ? 'class=active': '' }}>
+                    <li {{Request::is('backend/categories') || Request::is('backend/categories/*') ? 'class=active': '' }}>
                         <a href="{{route('categories.index')}}">
                             Kategorije
                         </a>
                     </li>
-                    <li {{Request::is('pictures') || Request::is('pictures/*') ? 'class=active': '' }}>
+                    <li {{Request::is('backend/pictures') || Request::is('backend/pictures/*') ? 'class=active': '' }}>
                         <a href="{{route('pictures.index')}}">
                             Slike
                         </a>
@@ -75,8 +74,7 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="{{route('backend.home')}}" style="color: #8eaebd;">
-                    E-kako
-                    {{--    <img src="{{asset('images/logo_white_transparent.png')}}" class="logo-sidebar"> --}}
+                        <img src="{{asset('images/e-kako-logo-trans.png')}}" alt="e-kako" style="width: 200px;height: 80px;margin-top: 15px;">
                     </a>
                 </li>
                 <li class="sidebar-user">
@@ -94,25 +92,25 @@
 						</form>
                     </div>
                 </li>
-                <li {{Request::is('home') ? 'class=active': '' }}>
+                <li {{Request::is('backend/home') ? 'class=active': '' }}>
                     <a href="{{route('backend.home')}}">
                         <i class="fa fa-tachometer" aria-hidden="true"></i>
                         <p>Kontr. ploča</p>
                     </a>
                 </li>
-                <li {{Request::is('posts') || Request::is('posts/*') ? 'class=active': '' }}>
+                <li {{Request::is('backend/posts') || Request::is('backend/posts/*') ? 'class=active': '' }}>
                     <a href="{{route('posts.index')}}">
                         <i class="fa fa-file-text-o" aria-hidden="true"></i>
                         <p>Postovi</p>
                     </a>
                 </li>
-                <li {{Request::is('categories') || Request::is('categories/*') ? 'class=active': '' }}>
+                <li {{Request::is('backend/categories') || Request::is('backend/categories/*') ? 'class=active': '' }}>
                     <a href="{{route('categories.index')}}">
                         <i class="fa fa-tags" aria-hidden="true"></i>
                         <p>Kategorije</p>
                     </a>
                 </li>
-                <li {{Request::is('pictures') || Request::is('pictures/*') ? 'class=active': '' }}>
+                <li {{Request::is('backend/pictures') || Request::is('backend/pictures/*') ? 'class=active': '' }}>
                     <a href="{{route('pictures.index')}}">
                         <i class="fa fa-picture-o" aria-hidden="true"></i>
                         <p>Slike</p>
@@ -128,13 +126,13 @@
             <nav class="navbar navbar-inverse">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="javascript:void(0)" style="color: #8eaebd;">
-                    @if(Request::is('home'))
+                    @if(Request::is('backend/home'))
                         Kontrolna ploča
-                    @elseif(Request::is('categories') || Request::is('categories/*'))
+                    @elseif(Request::is('backend/categories') || Request::is('backend/categories/*'))
                         Kategorije
-                    @elseif(Request::is('pictures') || Request::is('pictures/*'))
+                    @elseif(Request::is('backend/pictures') || Request::is('backend/pictures/*'))
                         Slike
-                    @elseif(Request::is('posts') || Request::is('posts/*'))
+                    @elseif(Request::is('backend/posts') || Request::is('backend/posts/*'))
                         Postovi
                     @endif
                     </a>
@@ -146,7 +144,7 @@
     </div>
     <!-- /#wrapper -->
 
-    @push('scripts')
+    @push('scripts_bottom')
     <script src="{{ mix('build/js/backend.js') }}"></script>
     @endpush
 @endsection

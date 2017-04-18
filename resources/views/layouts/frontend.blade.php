@@ -4,9 +4,9 @@
 @endpush
 @section('content')
 	@include('frontend/header')
-	<div class="container">
-		<div class="row">
-			@yield('container')
-		</div>
-	</div>
+	@yield('container')
+	@include('frontend/footer')
 @endsection
+@push('scripts_bottom')
+	<script src="{{ mix('build/js/frontend.js') }}"></script>
+@endpush
