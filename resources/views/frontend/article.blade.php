@@ -13,7 +13,7 @@
 			<hr>
 		</div>
 		<div class="col-xs-12 col-md-8">
-			<article> {!!$post->content!!} </article>
+			<article style="overflow: hidden;"> {!!$post->content!!} </article>
 		</div>
 		<div class="col-xs-12 col-md-4">
 			<div style="width: 300px; height: 250px; background-color: gray; margin: 30px auto">

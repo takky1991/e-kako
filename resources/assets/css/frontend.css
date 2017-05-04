@@ -4,7 +4,7 @@ a, a:hover, a:focus {
 
 #app {
     background-color: #f8f8f8;
-    min-height: 100vh;
+    min-height: 80vh;
 }
 
 #header.navbar-default .navbar-nav > li > a {
@@ -241,6 +241,14 @@ a, a:hover, a:focus {
     padding: 5px 10px;
     font-size: 23px;
     color: #444b51;
+}
+
+article {
+	overflow: hidden;
+}
+
+article img {
+	max-width: 100%;
 }
 
 .article {

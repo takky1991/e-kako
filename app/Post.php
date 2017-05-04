@@ -63,4 +63,9 @@ class Post extends Model
 
 		return asset('images/no-image.png');
 	}
+
+	public function user()
+	{
+		return $this->belongsTo('App\User');
+	}
 }

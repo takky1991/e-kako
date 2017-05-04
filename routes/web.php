@@ -17,7 +17,7 @@ Route::get('/kategorije/{category}', 'FrontendController@category')->name('front
 
 Auth::routes();
 
-Route::group(['prefix' => 'backend'], function () {
+Route::group(['prefix' => 'backend', 'middleware' => 'admin'], function () {
 	Route::get('/home', 'Backend\HomeController@index')->name('backend.home');
 	Route::resource('categories', 'Backend\CategoriesController');
 	Route::resource('pictures', 'Backend\ImagesController');
@@ -25,7 +25,10 @@ Route::group(['prefix' => 'backend'], function () {
 });
 
 Route::group(['prefix' => 'api'], function () {
-	Route::post('/images-upload','Backend\ImagesController@upload')->name('images-upload');
+	Route::group(['middleware' => 'admin'], function () {
+		Route::post('/images-upload','Backend\ImagesController@upload')->name('images-upload');
+		Route::get('/images-json', 'Backend\ImagesController@imagesJson')->name('images-json');
+	});
+
 	Route::post('/post-image-upload', 'UploadController@redactorImageUpload')->name('post-image-upload');
-	Route::get('/images-json', 'Backend\ImagesController@imagesJson')->name('images-json');
 });

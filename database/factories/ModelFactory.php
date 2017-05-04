@@ -23,12 +23,14 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
+        'admin' => false
     ];
 });
 
 $factory->state(App\User::class, 'admin', function (Faker\Generator $faker) {
     return [
-        'email' => 'admin@admin.com'
+        'email' => 'admin@admin.com',
+        'admin' => true
     ];
 });
 
