@@ -15,6 +15,11 @@ Route::get('/', 'FrontendController@index')->name('homepage');
 Route::get('/artikli/{category}/{post}', 'FrontendController@post')->name('frontend.post');
 Route::get('/kategorije/{category}', 'FrontendController@category')->name('frontend.category');
 
+Route::group(['middleware' => 'auth'], function () {
+	Route::get('/create-post', 'FrontendController@showCreatePostForm')->name('frontend.createPost');
+	Route::post('/create-post', 'FrontendController@storePost')->name('frontend.storePost');
+});
+
 Auth::routes();
 
 Route::group(['prefix' => 'backend', 'middleware' => 'admin'], function () {

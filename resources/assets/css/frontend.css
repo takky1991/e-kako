@@ -4,7 +4,6 @@ a, a:hover, a:focus {
 
 #app {
     background-color: #f8f8f8;
-    min-height: 80vh;
 }
 
 #header.navbar-default .navbar-nav > li > a {
@@ -87,6 +86,7 @@ a, a:hover, a:focus {
 	min-height: 110px;
     position: absolute;
     bottom: 0;
+    width: 100%;
 }
 
 .grid-item-inner:hover {
@@ -228,15 +228,14 @@ a, a:hover, a:focus {
 }
 
 .category-title {
-	text-transform: uppercase;
     letter-spacing: 1px;
     text-align: center;
-    color: #fff;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
 .category-title span{
+	text-transform: uppercase;
 	border-bottom: 3px solid #b6b5b5;
     padding: 5px 10px;
     font-size: 23px;
@@ -274,7 +273,7 @@ article img {
 }
 
 .media-body a {
-	color: #444b51;
+	color: #5491f4;
 }
 
 .footer-bs {

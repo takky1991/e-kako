@@ -24,6 +24,7 @@ class CreatePostsTable extends Migration
             $table->text('content');
             $table->boolean('public');
             $table->string('slug');
+            $table->boolean('guest');
             $table->timestamps();
             $table->softDeletes();
         });

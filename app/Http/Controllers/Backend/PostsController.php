@@ -67,6 +67,7 @@ class PostsController extends Controller
             'category_id' => $request->category_id,
             'featured_image_id' => $request->featured_image_id,
             'public' => $request->public == 'on' ? true : false,
+            'guest' => false
         ]);
 
         return redirect(route('posts.index'));

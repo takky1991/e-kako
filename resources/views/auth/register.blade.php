@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
 @section('container')
-<div class="container" style="margin-top: 200px;>
+<div class="container" style="margin-top: 200px; min-height: 80vh;">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">

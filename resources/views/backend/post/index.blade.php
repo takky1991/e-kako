@@ -14,6 +14,7 @@
                 <tr class="info">
                     <th>#</th>
                     <th>Naslov</th>
+                    <th>Autor</th>
                     <th>Kategorija</th>
                     <th style="text-align: center;">Objavljeno</th>
                     <th class="center">Opcije</th>
@@ -24,6 +25,7 @@
                 <tr>
                     <td>{{$loop->iteration}}</td>
                     <td>{{ $value->title }}</td>
+                    <td>{{ $value->user->first_name }} {{ $value->user->last_name }}</td>
                     <td>{{ $value->category->name }}</td>
                     <td>
                         @if($value->public)

@@ -18,7 +18,8 @@ class Post extends Model
 		'intro',
 		'content',
 		'public',
-		'slug'
+		'slug',
+		'guest'
 	];
 
 	/**

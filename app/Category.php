@@ -41,6 +41,11 @@ class Category extends Model
 		});
 	}
 
+	public function latestThreeActivePosts()
+	{
+		return $this->posts()->wherePublic(true)->latest()->limit(3)->get();
+	}
+
 	public function latestSixActivePosts()
 	{
 		return $this->posts()->wherePublic(true)->latest()->limit(6)->get();

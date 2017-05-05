@@ -10,15 +10,6 @@ use Illuminate\Support\Facades\Response;
 
 class UploadController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     public function redactorImageUpload(Request $request)
     {

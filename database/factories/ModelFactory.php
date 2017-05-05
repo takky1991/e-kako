@@ -49,6 +49,7 @@ $factory->define(App\Post::class, function (Faker\Generator $faker) {
         'title' => $faker->sentence($nbWords = 6, $variableNbWords = true),
         'intro' => $faker->paragraph($nbSentences = 5, $variableNbSentences = true),
         'content' => $faker->paragraph($nbSentences = 30, $variableNbSentences = true),
-        'public' => $faker->boolean()
+        'public' => $faker->boolean(),
+        'guest' => false
     ];
 });
