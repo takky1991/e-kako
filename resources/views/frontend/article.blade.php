@@ -3,18 +3,18 @@
 @section('container')
 <div class="container article">
 	<section>
-		<div style="width: 728px; margin-left: auto; margin-right: auto; margin-top: 30px">
+		<div style="width:100%; max-width: 728px; margin-left: auto; margin-right: auto; margin-top: 30px">
 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- e-kako-728*90 -->
+			<!-- e-kako-responsive -->
 			<ins class="adsbygoogle"
-			     style="display:inline-block;width:728px;height:90px"
+			     style="display:block"
 			     data-ad-client="ca-pub-2719272532112652"
-			     data-ad-slot="5003479016"></ins>
+			     data-ad-slot="9573279410"
+			     data-ad-format="auto"></ins>
 			<script>
 			(adsbygoogle = window.adsbygoogle || []).push({});
 			</script>
 		</div>
-
 	</section>
 	<div class="row">
 		<div class="col-xs-12">
@@ -22,18 +22,27 @@
 			<hr>
 		</div>
 		<div class="col-xs-12 col-md-8">
-			<article style="overflow: hidden;"> 
-			<strong>{{$post->intro}}</strong>
-			<hr>
-			{!!$post->content!!} 
+			<article style="overflow: hidden;">
+			<div class="row">
+				<div class="col-xs-12">
+					<strong>{{$post->intro}}</strong>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-xs-12">
+					{!!$post->content!!} 
+				</div>
+			</div>
 			</article>
-			<div style="width: 336px; margin-left: auto; margin-right: auto; margin-top: 30px">
+			<div style="width:100%; max-width: 336px; margin-left: auto; margin-right: auto; margin-top: 30px">
 				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				<!-- e-kako-336x280 -->
+				<!-- e-kako-responsive -->
 				<ins class="adsbygoogle"
-				     style="display:inline-block;width:336px;height:280px"
+				     style="display:block"
 				     data-ad-client="ca-pub-2719272532112652"
-				     data-ad-slot="2050012611"></ins>
+				     data-ad-slot="9573279410"
+				     data-ad-format="auto"></ins>
 				<script>
 				(adsbygoogle = window.adsbygoogle || []).push({});
 				</script>
@@ -41,15 +50,7 @@
 		</div>
 		<div class="col-xs-12 col-md-4">
 			
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- e-kako-300*250 -->
-			<ins class="adsbygoogle"
-			     style="display:inline-block;width:300px;height:250px"
-			     data-ad-client="ca-pub-2719272532112652"
-			     data-ad-slot="3526745816"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
+
 
 			<ul class="media-list mod unstyled " data-module="rcp_right_rail" style="width: 300px;margin-left: auto;margin-right: auto;">
 				<h2 class="head mg-2 title">Najnovije</h2>
