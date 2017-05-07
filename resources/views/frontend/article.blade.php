@@ -1,5 +1,8 @@
 @extends('layouts.frontend')
 
+@section('title', 'e-kako | ' . $post->title)
+@section('description', $post->intro)
+
 @section('container')
 <div class="container article">
 	<section>

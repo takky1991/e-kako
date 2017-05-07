@@ -1,5 +1,8 @@
 @extends('layouts.homepage')
 
+@section('title', 'e-kako')
+@section('description', '')
+
 @section('page')
 	@foreach($categories as $category)
 	<div class="category">

@@ -1,5 +1,8 @@
 @extends('layouts.homepage')
 
+@section('title', 'e-kako | ' . $category->name)
+@section('description', $category->description)
+
 @section('page')
 	<div class="category">
 		<div class="col-xs-12 category-title">
