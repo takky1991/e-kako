@@ -29,7 +29,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 $factory->state(App\User::class, 'admin', function (Faker\Generator $faker) {
     return [
-        'email' => 'admin@admin.com',
+        'email' => 'nedimtopic@gmail.com',
         'admin' => true
     ];
 });
