@@ -119,7 +119,8 @@ return [
         'description' => 'opis',
         'title' => 'naslov',
         'content' => 'sadržaj',
-        'intro' => 'uvod'
+        'intro' => 'uvod',
+        'body' => 'komentar'
     ],
 
 ];

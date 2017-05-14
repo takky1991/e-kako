@@ -18,6 +18,7 @@ Route::get('/kategorije/{category}', 'FrontendController@category')->name('front
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('/create-post', 'FrontendController@showCreatePostForm')->name('frontend.createPost');
 	Route::post('/create-post', 'FrontendController@storePost')->name('frontend.storePost');
+	Route::post('posts/{post}/comments', 'CommentsController@store')->name('frontend.storeComment');
 });
 
 Auth::routes();

@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Comment;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Cviebrock\EloquentSluggable\Sluggable;
@@ -68,5 +70,18 @@ class Post extends Model
 	public function user()
 	{
 		return $this->belongsTo('App\User');
+	}
+
+	public function comments()
+	{
+		return $this->hasMany('App\Comment');
+	}
+
+	public function addComment($body)
+	{
+		$this->comments()->create([
+			'user_id' => Auth::id(),
+			'body' => $body
+		]);
 	}
 }

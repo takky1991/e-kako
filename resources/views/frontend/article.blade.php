@@ -50,11 +50,12 @@
 				(adsbygoogle = window.adsbygoogle || []).push({});
 				</script>
 			</div>
+			<br>
+			<br>
+			@include('frontend/includes/comments', ['comments' => $comments])
+			@include('frontend/includes/comment_form')
 		</div>
 		<div class="col-xs-12 col-md-4">
-			
-
-
 			<ul class="media-list mod unstyled " data-module="rcp_right_rail" style="width: 300px;margin-left: auto;margin-right: auto;">
 				<h2 class="head mg-2 title">Najnovije</h2>
 				@foreach($category->latestSixActivePosts() as $suggestedPost)

@@ -20,10 +20,13 @@ class FrontendController extends Controller
     public function post(Category $category, Post $post)
     {
         $categories = Category::whereHasPosts()->get();
+        $comments = $post->comments()->oldest('created_at')->get();
+
     	return view('frontend/article', [
     		'post' => $post,
             'category' => $category,
-            'categories' => $categories
+            'categories' => $categories,
+            'comments' => $comments
     	]);
     }
 
