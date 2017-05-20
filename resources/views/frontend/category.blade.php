@@ -14,7 +14,7 @@
 		  			@include('frontend/includes/article_card')
 		  		</div>
 			</div>
-			@if($loop->iteration == 1)
+			@if($loop->iteration == 1 || $loop->iteration == 3 || $loop->iteration == 5)
 			<div class="col-xs-12 col-sm-6 col-md-4">
 		  		<div class="grid-item-wrapper">
 		  			<div style="width:100%; max-width: 336px; margin-left: auto; margin-right: auto;">
