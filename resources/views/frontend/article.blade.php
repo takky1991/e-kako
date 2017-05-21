@@ -2,7 +2,7 @@
 
 @section('title', 'e-kako | ' . $post->title)
 @section('description', $post->intro)
-@section('facebook_img', URL::to('/') . $post->featuredImageUrl())
+@section('facebook_img', URL::to('/') . Storage::disk('local')->url($post->featuredImage->uri))
 
 @section('container')
 <div class="container article">
