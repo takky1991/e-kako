@@ -18,10 +18,7 @@
     	<div class="col-md-2 footer-social animated fadeInDown">
         	<h4>Pratite nas</h4>
         	<ul>
-            	<li><a href="#">Facebook</a></li>
-            	<li><a href="#">Twitter</a></li>
-            	<li><a href="#">Instagram</a></li>
-            	<li><a href="#">RSS</a></li>
+            	<li><a href="https://www.facebook.com/E-kako-1309113109157543/" target="_blank">Facebook</a></li>
             </ul>
         </div>
     {{-- 	<div class="col-md-3 footer-ns animated fadeInRight">

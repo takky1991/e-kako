@@ -2,6 +2,7 @@
 
 @section('title', 'e-kako | ' . $post->title)
 @section('description', $post->intro)
+@section('facebook_img', URL::to('/') . $post->featuredImageUrl())
 
 @section('container')
 <div class="container article">
