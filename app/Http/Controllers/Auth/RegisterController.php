@@ -48,9 +48,8 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-        $categories = Category::all();
 
-        return view('auth.register', ['categories' => $categories]);
+        return view('auth.register');
     }
 
     /**

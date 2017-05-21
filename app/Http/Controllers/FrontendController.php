@@ -11,42 +11,32 @@ class FrontendController extends Controller
 {
     public function index()
     {
-    	$categories = Category::whereHasPosts()->get();
-    	return view('frontend/home', [
-    		'categories' => $categories,
-    	]);
+    	return view('frontend/home');
     }
 
     public function post(Category $category, Post $post)
     {
-        $categories = Category::whereHasPosts()->get();
         $comments = $post->comments()->oldest('created_at')->get();
 
     	return view('frontend/article', [
     		'post' => $post,
             'category' => $category,
-            'categories' => $categories,
             'comments' => $comments
     	]);
     }
 
     public function category(Category $category)
     {
-        $categories = Category::whereHasPosts()->get();
         $posts = $category->activePosts();
         return view('frontend/category', [
             'posts' => $posts,
-            'category' => $category,
-            'categories' => $categories
+            'category' => $category
         ]);
     }
 
     public function showCreatePostForm()
     {
-        $categories = Category::whereHasPosts()->get();
-        return view('frontend/create_post', [
-            'categories' => $categories
-        ]);
+        return view('frontend/create_post');
     }
 
     public function storePost(Request $request)

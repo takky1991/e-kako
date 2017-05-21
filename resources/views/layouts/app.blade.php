@@ -7,10 +7,10 @@
     <title>@yield('title')</title>
     <meta name="description" content="@yield('description')">
 
-    <meta property="og:image" content="@yield('facebook_img')"/>
-    <meta property="og:description" content="@yield('description')"/>
-    <meta property="og:url" content="{{Request::fullUrl()}}"/>
     <meta property="og:title" content="@yield('title')"/>
+    <meta property="og:image" content="@yield('facebook_img')"/>
+    <meta property="og:url" content="{{Request::fullUrl()}}"/>
+    <meta property="og:description" content="@yield('description')"/>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">

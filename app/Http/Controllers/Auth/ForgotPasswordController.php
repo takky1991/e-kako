@@ -38,8 +38,7 @@ class ForgotPasswordController extends Controller
      */
     public function showLinkRequestForm()
     {
-        $categories = Category::all();
 
-        return view('auth.passwords.email', ['categories' => $categories]);
+        return view('auth.passwords.email');
     }
 }
