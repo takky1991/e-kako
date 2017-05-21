@@ -38,18 +38,15 @@
 				</div>
 			</div>
 			</article>
-			<div style="width:100%; max-width: 336px; margin-left: auto; margin-right: auto; margin-top: 30px">
-				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				<!-- e-kako-responsive -->
-				<ins class="adsbygoogle"
-				     style="display:block"
-				     data-ad-client="ca-pub-2719272532112652"
-				     data-ad-slot="9573279410"
-				     data-ad-format="auto"></ins>
-				<script>
-				(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>
-			</div>
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- e-kako 336x280 bottom -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:336px;height:280px"
+			     data-ad-client="ca-pub-2719272532112652"
+			     data-ad-slot="8863648616"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
 			<br>
 			<br>
 			@include('frontend/includes/comments', ['comments' => $comments])

@@ -9,7 +9,7 @@
 	        <div class="row">
 	            <div class="col-md-8 col-md-offset-2 text-xs-center">
 	                <h1 class="mbr-section-title display-2">TRBUHOM ZA KRUHOM</h1>
-	                <div class="lead"><p>Saznajte sve informacije kako započeti novi život u Njemačkoj. <br>Pročitajte lična iskustva onih koji su već prošli proces prilagođavanja.</p></div>
+	                <div class="lead"><p>Saznajte sve informacije kako započeti novi život u Njemačkoj. <br>Pročitajte lična iskustva onih koji su već prošli proces prilagođavanja od momenta kako predati za vizu te spajanja porodice do momenta normalnog rada i života u Njemačkoj</p></div>
 	            </div>
 	        </div>
 	    </div>

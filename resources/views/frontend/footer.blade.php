@@ -2,8 +2,8 @@
     <div class="row">
     	<div class="col-md-3 footer-brand animated fadeInLeft">
         	<img src="{{asset('images/e-kako-logo-trans.png')}}" alt="e-kako" style="width: 100px; margin-bottom: 15px;">
-            <p>Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor vitae orci nec ultricies. Curabitur vehicula, libero eget faucibus faucibus, purus erat eleifend enim, porta pellentesque ex mi ut sem.</p>
-            <p>© 2014 BS3 UI Kit, All rights reserved</p>
+            <p>Saznajte sve informacije kako započeti novi život u Njemačkoj. Pročitajte lična iskustva onih koji su već prošli proces prilagođavanja od momenta kako predati za vizu te spajanja porodice do momenta normalnog rada i života u Njemačkoj</p>
+            <p>© {{Carbon\Carbon::now()->year}} e-kako.ba, Sva prava zadrzava</p>
         </div>
     	<div class="col-md-4 footer-nav animated fadeInUp">
         	<h4>KATEGORIJE —</h4>
