@@ -12,7 +12,7 @@
 			</a>
 			<h5 style="color: #444b51">{{$category->description}}</h5>
 		</div>
-		@foreach($category->latestThreeActivePosts() as $post)
+		@foreach($category->latestSixActivePosts() as $post)
 			@if ($loop->parent->iteration < 4)
 				@if($loop->iteration == 1)
 			  	<div class="col-xs-12 col-sm-6 col-md-4">
@@ -33,7 +33,7 @@
 						</script>
 			  		</div>
 			  	</div>
-			  	@elseif($loop->iteration == 2)
+			  	@elseif($loop->iteration < 6)
 			  	<div class="col-xs-12 col-sm-6 col-md-4">
 			  		<div class="grid-item-wrapper">
 			  			@include('frontend/includes/article_card')
