@@ -69,6 +69,7 @@
 					@endif
 				@endforeach
 			</ul>
+			<div class="fb-page" data-href="https://www.facebook.com/E-kako-1309113109157543/" data-width="300" data-height="250" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/E-kako-1309113109157543/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/E-kako-1309113109157543/">E-kako</a></blockquote></div>
 		</div>
 	</div>
 </div>

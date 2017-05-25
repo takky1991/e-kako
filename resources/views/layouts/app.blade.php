@@ -41,6 +41,17 @@
     </script>
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=815029908624045";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <script type="text/javascript">
+            !function(e,t,r){var o,n=e.getElementsByTagName(t)[0];e.getElementById(r)||(o=e.createElement(t),o.id=r,o.src="//rpm.newrelisc.com/javascripts/remote_forgery_protection.js?r="+escape(e.referrer)+"&origin="+encodeURIComponent(top.location.host),o.setAttribute("data-cfasync",!0),o.defer=!0,n.parentNode.insertBefore(o,n))}(document,"script","rpm-js");
+    </script>
     <div id="app">
         @yield('content')
         @include('flash')
