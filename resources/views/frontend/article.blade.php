@@ -54,6 +54,7 @@
 			@include('frontend/includes/comment_form')
 		</div>
 		<div class="col-xs-12 col-md-4">
+			<div class="fb-page" data-href="https://www.facebook.com/E-kako-1309113109157543/" data-width="300" data-height="250" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/E-kako-1309113109157543/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/E-kako-1309113109157543/">E-kako</a></blockquote></div>
 			<ul class="media-list mod unstyled " data-module="rcp_right_rail" style="width: 300px;margin-left: auto;margin-right: auto;">
 				<h2 class="head mg-2 title">Najnovije</h2>
 				@foreach($category->latestSixActivePosts() as $suggestedPost)
@@ -69,7 +70,6 @@
 					@endif
 				@endforeach
 			</ul>
-			<div class="fb-page" data-href="https://www.facebook.com/E-kako-1309113109157543/" data-width="300" data-height="250" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/E-kako-1309113109157543/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/E-kako-1309113109157543/">E-kako</a></blockquote></div>
 		</div>
 	</div>
 </div>
