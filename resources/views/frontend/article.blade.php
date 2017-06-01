@@ -27,17 +27,11 @@
 		</div>
 		<div class="col-xs-12 col-md-8">
 			<article style="overflow: hidden;">
-			<div class="row">
-				<div class="col-xs-12">
-					<strong>{{$post->intro}}</strong>
+				<div class="row">
+					<div class="col-xs-12">
+						{!!$post->content!!} 
+					</div>
 				</div>
-			</div>
-			<br>
-			<div class="row">
-				<div class="col-xs-12">
-					{!!$post->content!!} 
-				</div>
-			</div>
 			</article>
 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 			<!-- e-kako 336x280 bottom -->
