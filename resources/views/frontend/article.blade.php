@@ -7,7 +7,7 @@
 @section('container')
 <div class="container article">
 	<section>
-		{{-- <div style="width:100%; max-width: 728px; margin-left: auto; margin-right: auto; margin-top: 30px">
+		<div style="width:100%; max-width: 728px; margin-left: auto; margin-right: auto; margin-top: 30px">
 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 			<!-- e-kako-responsive -->
 			<ins class="adsbygoogle"
@@ -18,9 +18,8 @@
 			<script>
 			(adsbygoogle = window.adsbygoogle || []).push({});
 			</script>
-		</div> --}}
+		</div>
 	</section>
-	<br><br>
 	<div class="row">
 		<div class="col-xs-12">
 			<h1 style="font-weight: bold"> {{$post->title}} </h1>
@@ -34,6 +33,7 @@
 					</div>
 				</div>
 			</article>
+
 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 			<!-- e-kako 336x280 bottom -->
 			<ins class="adsbygoogle"
@@ -43,6 +43,7 @@
 			<script>
 			(adsbygoogle = window.adsbygoogle || []).push({});
 			</script>
+			
 			<br>
 			<br>
 			@include('frontend/includes/comments', ['comments' => $comments])
