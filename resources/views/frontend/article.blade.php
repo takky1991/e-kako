@@ -43,6 +43,16 @@
 			<script>
 			(adsbygoogle = window.adsbygoogle || []).push({});
 			</script>
+
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- e-kako 336x280 bottom -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:336px;height:280px"
+			     data-ad-client="ca-pub-2719272532112652"
+			     data-ad-slot="8863648616"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
 			
 			<br>
 			<br>
