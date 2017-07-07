@@ -17,7 +17,6 @@
 			@if($loop->iteration == 1 || $loop->iteration == 3 || $loop->iteration == 5)
 			<div class="col-xs-12 col-sm-6 col-md-4">
 		  		<div class="grid-item-wrapper">
-		  			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 					<!-- e-kako 336x280 naslovna -->
 					<ins class="adsbygoogle"
 					     style="display:inline-block;width:336px;height:280px"

@@ -109,6 +109,7 @@
                     <div class="col-xs-12">
                         <div class="form-group {{$errors->has('content') ? 'has-error' : ''}}">
                             <label for="content">Sadržaj</label>
+                            <span>Kod za reklamu u tekstu: &lt;p class="ad-92725321">ad&lt;/p></span>
                             <textarea id="content"></textarea>
                             @if ($errors->has('content'))
                                 <span class="help-block">
@@ -154,7 +155,7 @@
                 lang : 'ba',
                 focusEnd : true
             });
-            redactorEditor.redactor("code.set", `{!!$post->content!!}`);
+            redactorEditor.redactor("code.set", `{!! preg_replace('#<script(.*?)>(.*?)</script>#is', 'script here', $post->content)!!}`);
         });
     </script>
 @endpush
